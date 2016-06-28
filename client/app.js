@@ -4,6 +4,12 @@ angular.module('toggle_jobs', [])
 it exists.  If it finds it, then it brings it to you (dependency injection).  $scope angular 
 provides out of box.  $scope = model, just like normal js object
 */
+// .config(function($routeProvider) {
+//   .when('/', {
+//     controller: 'ToggleController',
+//     templateUrl: 'index.html'
+//   });
+// })
 
 .controller('MainController', function($scope) {
 
