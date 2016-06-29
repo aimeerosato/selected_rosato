@@ -16,13 +16,20 @@ provides out of box.  $scope = model, just like normal js object
   $scope.welcome = "Hello!";
 
   $http.get('/api/jobs')
-    .success(function(data) {
-      $scope.jobs = data;
-      console.log(data);
-    })
-    .error(function(data) {
+    .then(function(data) {
+      $scope.jobs = data.data;
+      //console.log(data.data);
+    }, function(data) {
         console.log("Error: " + data);
     });
+
+  $scope.changeStatus = function(id) {
+    $http.put('/api/jobs/' + id)
+      .then(function (data) {
+        console.log(data);
+        console.log($scope.jobs);
+      })
+  }
 })
 
 // .controller('TableController', function(NgTableParams, $resource){

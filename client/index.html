@@ -30,10 +30,18 @@
         -->
 
         <table ng-table="vm.tableParams" ng-model="jobs" class="table">
+          <tr>
+            <th>Toggle Status</th>
+            <th>Current Status</th>
+            <th>Job Title</th>
+            <th>Date Created</th>
+            <th>More Information</th>
+          </tr>
           <tr ng-repeat="job in jobs">
             <td title="Active/Inactive">
-              <button>{{jobs[$index].status}}</button>
+              <button ng-click="changeStatus(jobs[$index]._id)">Change Status</button>
             </td>
+            <td>{{jobs[$index].status}}</td>
             <td title="Job Title">{{jobs[$index].title}}</td>
             <td title="Date">{{jobs[$index].creationDate}}</td>
             <td title="More info">  

@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/../client'));
 
 var Job = mongoose.model('Job', {
   title: String, 
-  creationDate: Date,
+  creationDate: String,
   status: String,
   isApproved: Boolean,
   tags: Array 
