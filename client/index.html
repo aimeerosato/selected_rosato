@@ -5,7 +5,11 @@
   <title>Rosato Selected Coding Challenge</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.min.css">
+  <script src="https://cdn.rawgit.com/esvit/ng-table/v1.0.0/dist/ng-table.js"></script>
+
 <!-- What's wrong with this? 
   <script src="node_modules/angular/angular.js"></script>-->
   <script src="app.js"></script>
@@ -20,7 +24,13 @@
       <div ng-controller="MainController">
         <p class="text-center">{{welcome}}</p>
       </div>
-    
+
+    </div>
+
+    <!-- Templates injected here -->
+
+    <div ng-view>
+
     </div>
   
   </body>

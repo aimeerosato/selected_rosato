@@ -17,3 +17,11 @@ provides out of box.  $scope = model, just like normal js object
 
 })
 
+// .controller('TableController', function(NgTableParams, $resource){
+//   var Api = $resource("/data");
+//   this.tableParams = new NgTableParams({}, {
+//     getData: function(params) {
+//       return Api.get(params.url()).
+//     }
+//   })
+// })
