@@ -3,7 +3,15 @@ var app = express();
 var mongoose = require('mongoose');
 var jobs_data = require('./jobs.json') ;
 
+/*
+  Connect to database 
+*/
+
 mongoose.connect('mongodb://localhost/jobs_data');
+
+/*
+  Serve up static files
+*/
 
 app.use(express.static(__dirname + '/../client'));
 
@@ -29,7 +37,20 @@ var Job = mongoose.model('Job', {
 //   }
 // });
 
-// Start of Update Function:
+/*
+  API Routes that interact with mock data
+*/
+
+app.get('/api/jobs', function(req, res) {
+  Job.find(function(err, jobs) {
+    if(err){
+      res.send(err)
+    }
+
+    res.json(jobs);
+  });
+});
+
 app.put('/api/jobs/:id', function(req, res) {
   Job.findById({ _id: req.params.id}, function(err, doc) {
     if(doc.status === "Inactive"){
@@ -43,15 +64,9 @@ app.put('/api/jobs/:id', function(req, res) {
   });
 });
 
-// WORKS IN POSTMAN
-app.get('/api/jobs', function(req, res) {
-  Job.find(function(err, jobs) {
-    if(err)
-      res.send(err)
-
-    res.json(jobs);
-  });
-});
+/*
+  Starting express server
+*/
 
 app.listen(3121, function() {
   console.log("App listening on port 3121");

@@ -23,11 +23,6 @@
       
       <div ng-controller="MainController">
         <p class="text-center">{{welcome}}</p>
-        <!-- This gets list of titles on page
-        <ul ng-model="jobs" ng-repeat="job in jobs">
-          <li>{{jobs[$index].title}}</li>
-        </ul>
-        -->
 
         <table ng-init="loadJobs()" ng-table="vm.tableParams" ng-model="jobs" class="table">
           <tr>
@@ -54,15 +49,6 @@
       </div>
 
     </div>
-
-    <!-- Templates injected here -->
-
-    <div ng-view>
-
-    </div>
   
   </body>
-
-  
-
 </html>
