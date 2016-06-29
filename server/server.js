@@ -32,17 +32,14 @@ var Job = mongoose.model('Job', {
 // Start of Update Function:
 app.put('/api/jobs/:id', function(req, res) {
   Job.findById({ _id: req.params.id}, function(err, doc) {
-    if(doc.status === "inactive"){
-      doc.status = "active";
-      doc.save(function(err, newJob){
-        res.json(newJob);
-      });
+    if(doc.status === "Inactive"){
+      doc.status = "Active";
     } else {
-      doc.status = "inactive";
-      doc.save(function(err, newJob){
-        res.json(newJob);
-      });
+      doc.status = "Inactive";  
     }
+    doc.save(function(err, newJob){
+        res.json(newJob);
+    });
   });
 });
 

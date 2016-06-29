@@ -29,7 +29,7 @@
         </ul>
         -->
 
-        <table ng-table="vm.tableParams" ng-model="jobs" class="table">
+        <table ng-init="loadJobs()" ng-table="vm.tableParams" ng-model="jobs" class="table">
           <tr>
             <th>Toggle Status</th>
             <th>Current Status</th>

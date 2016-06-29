@@ -1,31 +1,31 @@
 [
     { "title": "5th Grade ELA Teacher",
       "creationDate": "5/25/16",
-      "status": "inactive",
+      "status": "Inactive",
       "isApproved": "false",
       "tags": ["elementary", "ELA", "full-time"]
     },
     { "title": "8th Grade Spanish Teacher",
       "creationDate": "4/23/16",
-      "status": "inactive",
+      "status": "Inactive",
       "isApproved": "false",
       "tags": ["middle school", "Spanish", "full-time"]
     },
     { "title": "High School AP Calculus Teacher",
       "creationDate": "5/23/16",
-      "status": "inactive",
+      "status": "Inactive",
       "isApproved": "false",
       "tags": ["high school", "math", "full-time"]
     },
     { "title": "3/4 Grade Assistant Teacher",
       "creationDate": "5/16/16",
-      "status": "inactive",
+      "status": "Inactive",
       "isApproved": "false",
       "tags": ["elementary", "part-time"]
     },
     { "title": "SETSS Teacher Astoria Middle School",
       "creationDate": "6/4/16",
-      "status": "inactive",
+      "status": "Inactive",
       "isApproved": "false",
       "tags": ["middle school", "special education", "full-time"]
     }
