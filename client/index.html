@@ -23,6 +23,9 @@
       
       <div ng-controller="MainController">
         <p class="text-center">{{welcome}}</p>
+        <ul ng-model="jobs" ng-repeat="job in jobs">
+          <li>{{jobs[$index].title}}</li>
+        </ul>
       </div>
 
     </div>

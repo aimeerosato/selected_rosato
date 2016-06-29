@@ -11,10 +11,18 @@ provides out of box.  $scope = model, just like normal js object
 //   });
 // })
 
-.controller('MainController', function($scope) {
+.controller('MainController', function($scope, $http) {
 
   $scope.welcome = "Hello!";
 
+  $http.get('/api/jobs')
+    .success(function(data) {
+      $scope.jobs = data;
+      console.log(data);
+    })
+    .error(function(data) {
+        console.log("Error: " + data);
+    });
 })
 
 // .controller('TableController', function(NgTableParams, $resource){
