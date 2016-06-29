@@ -31,30 +31,19 @@ var Job = mongoose.model('Job', {
 
 // Start of Update Function:
 app.put('/api/jobs/:id', function(req, res) {
-  console.log("Here");
   Job.findById({ _id: req.params.id}, function(err, doc) {
-    console.log(doc);
-
-    if(doc.isApproved === false){
-      res.json("shiiiit");
+    if(doc.status === "inactive"){
+      doc.status = "active";
+      doc.save(function(err, newJob){
+        res.json(newJob);
+      });
+    } else {
+      doc.status = "inactive";
+      doc.save(function(err, newJob){
+        res.json(newJob);
+      });
     }
-    //res.json(doc);
   });
-  // Job.findByIdAndUpdate(id, function(err, job) {
-  //   if(err) {
-  //     console.log("Error");
-  //     res.send(err)
-  //   } else {
-  //     console.log("This is found job: ", job);
-  //     if(job.status === "active") {
-  //       job.status = "inactive";
-  //     } else {
-  //       job.status = "active";
-  //     }
-  //     res.json(job);
-  //   }
-  // });
-  //res.json("here");
 });
 
 // WORKS IN POSTMAN
