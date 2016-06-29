@@ -15,9 +15,9 @@ mongoose.connect('mongodb://localhost/jobs_data');
 
 app.use(express.static(__dirname + '/../client'));
 
-// app.get('/', function(req, res) {
-//   res.send("Hello World");
-// });
+/*
+  Job model created and intantiated
+*/
 
 var Job = mongoose.model('Job', {
   title: String, 
@@ -27,15 +27,16 @@ var Job = mongoose.model('Job', {
   tags: Array 
 });
 
-//batch saved in Database - keeps saving everytime reloads
+// This batch adds the jobs into the database, but will keep on adding 
+// the same jobs upon a page refresh. 
 
-// Job.insertMany(jobs_data, function(err, docs) {
-//   if(err) { return handleError(err); }
+Job.insertMany(jobs_data, function(err, docs) {
+  if(err) { return handleError(err); }
 
-//   else {
-//     console.log("data collected :", docs);
-//   }
-// });
+  else {
+    console.log("data collected :", docs);
+  }
+});
 
 /*
   API Routes that interact with mock data
@@ -65,7 +66,7 @@ app.put('/api/jobs/:id', function(req, res) {
 });
 
 /*
-  Starting express server
+  Starts express server on port 3121
 */
 
 app.listen(3121, function() {
