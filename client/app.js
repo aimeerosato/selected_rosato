@@ -4,19 +4,17 @@ angular.module('toggle_jobs', [])
 
   $scope.loadJobs = function () {
     $http.get('/api/jobs')
-    .then(function(data) {
-      $scope.jobs = data.data;
-    }, function(data) {
-        console.log("Error: " + data);
-    });
+      .then( function(data) {
+        $scope.jobs = data.data;
+      }, function(data) {
+          console.log("Error: " + data);
+    })
   }
   
   $scope.changeStatus = function(id) {
     $http.put('/api/jobs/' + id)
-      .then(function (data) {
-        console.log(data);
-        console.log($scope.jobs);
+      .then( function (data) {
         $scope.loadJobs();
-      })
+    })
   }
 });

@@ -30,21 +30,21 @@ var Job = mongoose.model('Job', {
 // This batch adds the jobs into the database, but will keep on adding 
 // the same jobs upon a page refresh. 
 
-// Job.insertMany(jobs_data, function(err, docs) {
-//   if(err) { return handleError(err); }
+Job.insertMany(jobs_data, function (err, docs) {
+  if(err) { return handleError(err); }
 
-//   else {
-//     console.log("data collected :", docs);
-//   }
-// });
+  else {
+    console.log("data collected: ", docs);
+  }
+});
 
 /*
   API Routes that interact with mock data
 */
 
-app.get('/api/jobs', function(req, res) {
-  Job.find(function(err, jobs) {
-    if(err){
+app.get('/api/jobs', function (req, res) {
+  Job.find(function (err, jobs) {
+    if(err) {
       res.send(err)
     }
 
@@ -52,14 +52,14 @@ app.get('/api/jobs', function(req, res) {
   });
 });
 
-app.put('/api/jobs/:id', function(req, res) {
-  Job.findById({ _id: req.params.id}, function(err, doc) {
-    if(doc.status === "Inactive"){
+app.put('/api/jobs/:id', function (req, res) {
+  Job.findById({ _id: req.params.id}, function (err, doc) {
+    if(doc.status === "Inactive") {
       doc.status = "Active";
     } else {
       doc.status = "Inactive";  
     }
-    doc.save(function(err, newJob){
+    doc.save(function (err, newJob) {
         res.json(newJob);
     });
   });

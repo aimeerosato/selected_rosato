@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="toggle_jobs">
   <head>
+
   <meta charset="utf-8" />
   <title>Rosato Selected Coding Challenge</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" rel="stylesheet" href="./style.css" />
   <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-  
+
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-
-<!-- What's wrong with this? 
-  <script src="node_modules/angular/angular.js"></script>-->
   <script src="app.js"></script>
-
 
   </head>
 
@@ -24,7 +21,7 @@
       <br>
       
       <div ng-controller="MainController">
-        <p class="text-center">Employers, please click on the "Change status" button when a specific job is no longer active.</p><br><br>
+        <h3 class="text-left">Employers, please click on the "Change Status" button when a specific job is no longer active.</h3><br><br>
 
         <table ng-init="loadJobs()" ng-table="vm.tableParams" ng-model="jobs" class="table table-hover">
           <tr>
