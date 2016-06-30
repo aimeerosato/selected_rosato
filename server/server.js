@@ -30,13 +30,13 @@ var Job = mongoose.model('Job', {
 // This batch adds the jobs into the database, but will keep on adding 
 // the same jobs upon a page refresh. 
 
-Job.insertMany(jobs_data, function(err, docs) {
-  if(err) { return handleError(err); }
+// Job.insertMany(jobs_data, function(err, docs) {
+//   if(err) { return handleError(err); }
 
-  else {
-    console.log("data collected :", docs);
-  }
-});
+//   else {
+//     console.log("data collected :", docs);
+//   }
+// });
 
 /*
   API Routes that interact with mock data
@@ -66,7 +66,7 @@ app.put('/api/jobs/:id', function(req, res) {
 });
 
 /*
-  Starts express server on port 3121
+  Express server on port 3121
 */
 
 app.listen(3121, function() {

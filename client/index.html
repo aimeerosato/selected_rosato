@@ -4,24 +4,29 @@
   <meta charset="utf-8" />
   <title>Rosato Selected Coding Challenge</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" rel="stylesheet" href="./style.css" />
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+  
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 
 <!-- What's wrong with this? 
   <script src="node_modules/angular/angular.js"></script>-->
   <script src="app.js"></script>
 
+
   </head>
 
   <body>
     <div class="container">
     
-      <h1 class="text-center">Active and Inactive Jobs</h1>
+      <h1 class="text-center">Selected Education Jobs in NYC</h1>
+      <br>
       
       <div ng-controller="MainController">
-        <p class="text-center">{{welcome}}</p>
+        <p class="text-center">Employers, please click on the "Change status" button when a specific job is no longer active.</p><br><br>
 
-        <table ng-init="loadJobs()" ng-table="vm.tableParams" ng-model="jobs" class="table">
+        <table ng-init="loadJobs()" ng-table="vm.tableParams" ng-model="jobs" class="table table-hover">
           <tr>
             <th>Toggle Status</th>
             <th>Current Status</th>
@@ -31,7 +36,7 @@
           </tr>
           <tr ng-repeat="job in jobs">
             <td title="Active/Inactive">
-              <button ng-click="changeStatus(jobs[$index]._id)">Change Status</button>
+              <button ng-click="changeStatus(jobs[$index]._id)" class="btn btn-primary">Change Status</button>
             </td>
             <td>{{jobs[$index].status}}</td>
             <td title="Job Title">{{jobs[$index].title}}</td>
